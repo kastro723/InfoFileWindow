@@ -48,19 +48,19 @@ public class InfoFileWindow : EditorWindow
 
         Draw();
 
-        DrawLine();
-        // 파일 개수 출력
-        if (jsonFiles != null)
+        if(jsonFiles.Length > 0)
         {
-            GUILayout.BeginHorizontal();
-            GUILayout.Label($"Total Files: {jsonFiles.Length}", EditorStyles.boldLabel);
-            DeleteAllFiles();
-            GUILayout.EndHorizontal();
+            DrawLine();
+            // 파일 개수 출력
+            if (jsonFiles != null)
+            {
+                GUILayout.BeginHorizontal();
+                GUILayout.Label($"Total Files: {jsonFiles.Length}", EditorStyles.boldLabel);
+                DeleteAllFiles();
+                GUILayout.EndHorizontal();
+            }
         }
-        else
-        {
-            GUILayout.Label("Total Files: 0", EditorStyles.boldLabel);
-        }
+  
     }
 
     private void DeleteAllFiles()
